@@ -1,0 +1,9 @@
+mach create "timer-demo"
+
+machine LoadPlatformDescription @/project/renode_1.16.1_portable/platforms/cpus/nxp-s32k388.repl
+
+sysbus LoadELF @/project/ecu_project/timer_polling/timer_alarm.elf
+
+showAnalyzer sysbus.lpuart0
+
+start

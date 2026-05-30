@@ -1,0 +1,10 @@
+using sysbus
+
+mach create "demo"
+machine LoadPlatformDescription @platforms/cpus/nxp-s32k388.repl
+
+sysbus LoadELF @/project/ecu_project/uart_hal/uart_hal_test.elf
+
+showAnalyzer sysbus.lpuart0
+
+start

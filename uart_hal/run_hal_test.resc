@@ -1,0 +1,15 @@
+using sysbus
+
+# Run these in the Renode Monitor
+mach create "demo"
+machine LoadPlatformDescription @/home/ram/renode_portable/platforms/cpus/nxp-s32k388.repl
+
+# Use the @ for the path!
+sysbus LoadELF @/home/ram/renode_portable/VECU/uart//uart_hal_test.elf
+
+logLevel 3 siul2
+
+# This opens the window to see the text
+showAnalyzer sysbus.lpuart0
+
+start

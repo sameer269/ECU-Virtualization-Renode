@@ -1,0 +1,10 @@
+mach create "spi-demo"
+
+machine LoadPlatformDescription @platforms/cpus/nxp-s32k388.repl
+
+sysbus LoadELF @/project/ecu_project/spi_hal/spi_test.elf
+
+showAnalyzer sysbus.lpuart0
+
+
+start

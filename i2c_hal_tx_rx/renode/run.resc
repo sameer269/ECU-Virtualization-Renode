@@ -1,0 +1,9 @@
+mach create
+
+machine LoadPlatformDescription @platforms/cpus/nxp-s32k388.repl
+
+sysbus LoadELF @/project/ecu_project/i2c_hal_tx_rx/i2c_test.elf
+
+showAnalyzer sysbus.lpuart0
+
+start
